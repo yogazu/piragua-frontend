@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 
 
-const Piragua = ({title,image,price})=> (
+const Piragua = ({title,image,price,id})=> (
 
-    <article className="card">
+    <article className="card" key= {id}>
         
         <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
             <img src={image} alt={title} />
@@ -26,14 +26,16 @@ const Piragua = ({title,image,price})=> (
 Piragua.propTypes = {
     title: PropTypes.string,
     image: PropTypes.string,
-    price: PropTypes.string
+    price: PropTypes.string,
+    id:    PropTypes.string
 
 }
 
 Piragua.defaultProps = {
     title : "Nada de titulo papa",
     image : "https://i.pinimg.com/474x/1e/88/84/1e8884e32df28572ee656c4c2e377c1b.jpg",
-    price : "--"
+    price : "--",
+    id    : "0"
 }
 
 export default Piragua;
