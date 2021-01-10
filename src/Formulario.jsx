@@ -33,6 +33,7 @@ class Formulario extends React.Component {
         return (
             <div className="ed-grid">
                 <h1>FORMULARIO</h1>
+                <h2>{`${this.props.name}`}</h2>
                 <form id="elemento">
                     <div className="ed-grid m-grid-2">
                         <div className="form__item">
@@ -72,7 +73,7 @@ class Formulario extends React.Component {
     }
 
     componentWillUnmount () {
-        
+
     }
 
 }
