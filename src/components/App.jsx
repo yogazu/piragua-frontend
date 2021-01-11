@@ -2,7 +2,7 @@
 import React from "react";
 import "../styles/styles.scss";
 import Formulario from './pages/Formulario'
-import DatosGrid from './organisms/DatosGrid'
+import Datos from './pages/Datos'
 import Dato from './pages/Dato'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import MainMenu from "./organisms/MainMenu"
@@ -18,8 +18,8 @@ const App = () => (
     <MainMenu/>
     <Switch>
       <Route path="/" exact component = { Home }/>
-      <Route path="/datos/:id"  component = { Dato }/>
-      <Route path="/datos"  component = { DatosGrid }/>
+      <Route path="/dato/:id"  component = { Dato }/>
+      <Route path="/datos"  component = { Datos }/>
       <Route path="/formulario"  component = { () => <Formulario name= "pagina de contacto"/> }/>
       <Route path="/historial/:valor"  component = { History }/>
       <Route path="/historial"  component = { History }/>

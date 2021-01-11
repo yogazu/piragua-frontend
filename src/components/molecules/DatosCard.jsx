@@ -8,7 +8,7 @@ const DatosCard = ({id,title,image,price})=> (
     <article className="card" key= {id}>
         
         <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-            <Link to= {`/datos/${id}`}>
+            <Link to= {`/dato/${id}`}>
                 <img src={image} alt={title} />
             </Link>
         </div>
