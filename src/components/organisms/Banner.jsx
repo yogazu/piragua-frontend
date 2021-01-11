@@ -1,12 +1,12 @@
 import React from "react";
-import "./styles/styles.scss";
+import "../../styles/styles.scss";
 
 const Banner = () => (
 
     <div className="main-banner img-container l-section" id="main-banner">
     <div className="ed-grid lg-grid-6">
       <div className="lg-cols-4 lg-x-2">
-        <img className="main-banner__img" alt = "banner"  src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=60" />
+        <img className="main-banner__img" alt = "banner"  src="https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" />
         <div className="main-banner__data s-center">
           <p className="t2 s-mb-0">Proyecto Piragua</p>
           <p> Informes</p>

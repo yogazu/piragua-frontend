@@ -1,5 +1,5 @@
 import React from "react"
-import Piragua from './Piragua';
+import DatosCard from '../molecules/DatosCard';
 
 
 const datos = [ 
@@ -33,14 +33,16 @@ const DatosGrid = () => (
 
     <div className="ed-grid m-grid-4">
         { datos.map(d => (
-            <Piragua
+            <DatosCard
                 Key = {d.id}
                 id  = {d.id}
                 title = {d.title}
                 image = {d.image}
                 price = {d.price}
             
-            />))}
+            />
+            ))
+          }
 
     </div>
 

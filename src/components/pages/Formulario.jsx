@@ -34,7 +34,7 @@ class Formulario extends React.Component {
             <div className="ed-grid">
                 <h1>FORMULARIO</h1>
                 <h2>{`${this.props.name}`}</h2>
-                <form id="elemento">
+                <form id="form-element">
                     <div className="ed-grid m-grid-2">
                         <div className="form__item">
                             <label >Nombre completo</label>
@@ -60,7 +60,7 @@ class Formulario extends React.Component {
 
     componentDidMount () {
         
-        let elemento = document.getElementById("elemento")
+        let elemento = document.getElementById("form-element")
         console.log (elemento)
 
     }
