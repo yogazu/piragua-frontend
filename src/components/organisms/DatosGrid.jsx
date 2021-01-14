@@ -1,6 +1,6 @@
 import React from "react"
 import DatosCard from "../molecules/DatosCard"
-import withLoader from "../hoc/withLoader"
+import withLoader from "../HOC/withLoader"
 const DatosGrid = ({datos}) => (
     <div className="ed-grid m-grid-4">
         { datos.map(d => (
