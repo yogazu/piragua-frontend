@@ -30,8 +30,6 @@ DatosCard.propTypes = {
     title: PropTypes.string,
     image: PropTypes.string,
     price: PropTypes.string
-    
-
 }
 
 DatosCard.defaultProps = {

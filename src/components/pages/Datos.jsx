@@ -44,7 +44,7 @@ class Datos  extends Component {
     }
 
    componentDidMount () {
-     axios.get('http://my-json-server.typicode.com/yogazu/json-db/datos')
+     axios.get(`http://my-json-server.typicode.com/yogazu/json-db/datos`)
      .then(response => this.setState({
        datos:response.data
      }))
