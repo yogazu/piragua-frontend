@@ -33,7 +33,8 @@ class Formulario extends React.Component {
         return (
             <div className="ed-grid">
                 <h1>FORMULARIO</h1>
-                <form id="elemento">
+                <h2>{`${this.props.name}`}</h2>
+                <form id="form-element">
                     <div className="ed-grid m-grid-2">
                         <div className="form__item">
                             <label >Nombre completo</label>
@@ -59,7 +60,7 @@ class Formulario extends React.Component {
 
     componentDidMount () {
         
-        let elemento = document.getElementById("elemento")
+        let elemento = document.getElementById("form-element")
         console.log (elemento)
 
     }
@@ -72,7 +73,7 @@ class Formulario extends React.Component {
     }
 
     componentWillUnmount () {
-        
+
     }
 
 }

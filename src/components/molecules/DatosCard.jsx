@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
 
-
-const Piragua = ({title,image,price,id})=> (
+const DatosCard = ({id,title,image,price})=> (
 
     <article className="card" key= {id}>
         
         <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-            <img src={image} alt={title} />
+            <Link to= {`/dato/${id}`}>
+                <img src={image} alt={title} />
+            </Link>
         </div>
         <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
             <h3 className="t5 s-mb-2 s-center">
@@ -23,19 +25,19 @@ const Piragua = ({title,image,price,id})=> (
 
 )
 
-Piragua.propTypes = {
+DatosCard.propTypes = {
+    id:    PropTypes.number,
     title: PropTypes.string,
     image: PropTypes.string,
-    price: PropTypes.string,
-    id:    PropTypes.string
-
+    price: PropTypes.string
 }
 
-Piragua.defaultProps = {
+DatosCard.defaultProps = {
+    id    : 0,
     title : "Nada de titulo papa",
     image : "https://i.pinimg.com/474x/1e/88/84/1e8884e32df28572ee656c4c2e377c1b.jpg",
-    price : "--",
-    id    : "0"
+    price : "--"
+   
 }
 
-export default Piragua;
+export default DatosCard;
