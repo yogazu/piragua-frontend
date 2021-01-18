@@ -13,6 +13,7 @@ import Users from "./pages/Users";
 import 'fontsource-roboto';
 import General from "./pages/General";
 import Territoriales from "./organisms/Territoriales";
+import MunicipioxTerritorio from "./organisms/MunicipiosxTerritorio";
 
 
 
@@ -30,6 +31,7 @@ const App = () => (
       <Route path="/usuarios"  component = { Users }/>
       <Route path="/territoriales" component = { Territoriales}/>
       <Route path="/general" component = { General}/>
+      <Route path="/municipios/:idTerritorio" component = { MunicipioxTerritorio}/>
       <Route component = { () => (
         <div className="ed-grid">
           <h1>error 400</h1>
