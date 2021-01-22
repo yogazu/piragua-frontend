@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from"react"
+
 import useFetch from "../CustomHooks/useFetch"
 
 const Dato = ({ match }) => {
@@ -7,7 +7,6 @@ const Dato = ({ match }) => {
 
     const dato = useFetch(`http://my-json-server.typicode.com/yogazu/json-db/datos/${match.params.id}`,[ ])
 
-    console.log(dato);
     
     return (
         

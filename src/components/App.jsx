@@ -14,6 +14,8 @@ import 'fontsource-roboto';
 import General from "./pages/General";
 import Territoriales from "./organisms/Territoriales";
 import MunicipioxTerritorio from "./organisms/MunicipiosxTerritorio";
+import DatosNivelSubsiguiente from "./molecules/DatosNivelSubsiguiente";
+import DashboardPiragua from "./pages/DashboardPiragua";
 
 
 
@@ -31,7 +33,9 @@ const App = () => (
       <Route path="/usuarios"  component = { Users }/>
       <Route path="/territoriales" component = { Territoriales}/>
       <Route path="/general" component = { General}/>
+      <Route path="/dashboard" component = { DashboardPiragua}/>
       <Route path="/municipios/:idTerritorio" component = { MunicipioxTerritorio}/>
+      <Route path="/nivelsubsiguiente"  component = { DatosNivelSubsiguiente }/>
       <Route component = { () => (
         <div className="ed-grid">
           <h1>error 400</h1>
