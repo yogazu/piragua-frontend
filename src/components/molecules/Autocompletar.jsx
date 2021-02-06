@@ -6,7 +6,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete"
 const Autocompletar = ({id,arrayIn,labelName,widthValue}) =>{
 
     const [value, setValue] = useState(arrayIn[0]);
-    console.log({value})
+    
 
     return (
         <Autocomplete
@@ -22,9 +22,5 @@ const Autocompletar = ({id,arrayIn,labelName,widthValue}) =>{
     )
 
 }
-
-
-
-
 
 export default Autocompletar

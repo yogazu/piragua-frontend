@@ -10,7 +10,7 @@ const DatosGrid = ({datos}) => (
                 title = {d.title}
                 image = {d.image}
                 price = {d.price}
-            
+                addDatoToCart={0}
             />
             ))
         }

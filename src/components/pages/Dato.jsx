@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from"react"
+
 import useFetch from "../CustomHooks/useFetch"
 
 const Dato = ({ match }) => {
@@ -7,7 +7,6 @@ const Dato = ({ match }) => {
 
     const dato = useFetch(`http://my-json-server.typicode.com/yogazu/json-db/datos/${match.params.id}`,[ ])
 
-    console.log(dato);
     
     return (
         
@@ -20,7 +19,6 @@ const Dato = ({ match }) => {
                       <h1 className="m-cols-3">{dato.data.title}</h1>
                       <img className="m-cols-1" src={dato.data.image} alt={dato.data.title}/>
                       <p clasName = "m-cols-2">Parrafó descripción</p>
-                      
                     </div>
                 </div>
             ):

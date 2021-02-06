@@ -7,7 +7,6 @@ const useDatos = id => {
     const [datos,setDatos] = useState ({})
 
     useEffect(() => {
-        console.log("por aca paso")
          axios.get(`http://my-json-server.typicode.com/yogazu/json-db/datos/${id}`)
         .then(response => setDatos(response.data))
     
