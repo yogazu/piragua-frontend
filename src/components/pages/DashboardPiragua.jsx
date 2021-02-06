@@ -1,7 +1,7 @@
 import React from "react";
 // @material-ui/core
 import { makeStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
+
 
 // @material-ui/icons
 import Store from "@material-ui/icons/Store";
@@ -21,7 +21,7 @@ import Card from "../Card/Card";
 import CardHeader from "../Card/CardHeader"
 import CardIcon from "../Card/CardIcon"
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js"
-import MapChart from "../../MapChart"
+import MapChart from "../molecules/MapChart"
 import ControlledAccordions from "../molecules/ControlledAccordions"
 
 
@@ -83,11 +83,8 @@ export default function DashboardPiragia () {
 
             </div>
             <div className="ede-grid ">
-                    
-                        <img src="mapa-departamento-antioquia-contorno-municipios.png"></img>
-                    
+                <MapChart></MapChart>
             </div>
-
             <div className="ede-grid ">
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={12}>

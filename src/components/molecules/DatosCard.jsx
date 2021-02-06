@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
+import { addToCart } from '../../redux/actionCreators';
+import {connect} from "react-redux"
+
+const DatosCard = ({id,title,image,price,addDatoToCart})=> (
 
 
-const DatosCard = ({id,title,image,price})=> (
-
+    
     <article className="card" key= {id}>
         
         <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
@@ -18,7 +21,10 @@ const DatosCard = ({id,title,image,price})=> (
             </h3>
     
             <div className="s-main-center">
-            <a className="button--ghost-alert button--tiny" href="https://ed.team/cursos/ingles-gramatica">{`$ ${price}`} </a>
+                    <button className="button--ghost-alert button--tiny"
+                    onClick ={() => addDatoToCart(id) }>
+                        {`$ ${price}`} 
+                    </button>
             </div>
         </div>
     </article>
@@ -40,4 +46,11 @@ DatosCard.defaultProps = {
    
 }
 
-export default DatosCard;
+
+const mapStateToProps = () => ({})
+const mapDispatchToProps = dispatch => ({
+    addDatoToCart(id) {
+        dispatch(addToCart(id))
+    }
+})
+export default  connect(mapStateToProps,mapDispatchToProps)  (DatosCard);

@@ -2,14 +2,15 @@ import {useState,useEffect} from "react"
 
 
 function useFetch (url,initialState){
-    console.log(url)
-    const [data, setData ]       = useState (initialState)
+    
+    
+    const [data, setData ]       = useState(initialState)
     const [loading, setLoading ] = useState(false)
     const [error,  setError]     = useState(null) 
     
-    console.log("por aca paso 0")
+    
     function getData(){
-        console.log("por aca paso 2")
+       
         setLoading(true)
        
         fetch(url)
@@ -18,6 +19,7 @@ function useFetch (url,initialState){
                 setLoading(false)
         })
         .catch (error =>{
+            console.log(error)
             setLoading(false)
             setError(error)
 
@@ -25,12 +27,12 @@ function useFetch (url,initialState){
     }  
     
     useEffect(() => {
-        console.log("por aca paso 1")
+       
         getData()
     },[])
 
     return {
-
+        
         data,
         loading,
         error

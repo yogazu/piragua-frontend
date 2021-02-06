@@ -46,5 +46,4 @@ const Territoriales = ({ }) => {
       </div>
     )
 }
-
 export default Territoriales

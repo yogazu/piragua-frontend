@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import NivelesSubsigiente from "./NivelesSubsiguiente"
+import axios from "axios";
 
 const datosUno = [ 
     {
@@ -24,6 +25,7 @@ const datosUno = [
     }
 ]
 
+
 class DatosNivelSubsiguiente extends Component {
 
     constructor (props){
@@ -34,10 +36,16 @@ class DatosNivelSubsiguiente extends Component {
        }
     }  
 
-    
+    componentDidMount () {
+        axios.get(`http://piraguacorantioquia.com.co:8020/core/niveles-subsiguientes/get-all-nss1`)
+        .then(response => this.setState({
+            datos:response.data
+        }))
+      }
+   
 
     render(){
-    
+        const {datos} = this.state
         
         return (<NivelesSubsigiente datosNivelSubsiguiente  = {datosUno}/>)
     }
