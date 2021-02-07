@@ -1,5 +1,4 @@
 import React from "react";
-import MapLayer from "./MapLayer";
 import * as d3 from "d3";
 import { geoEqualEarth, geoPath } from "d3-geo"
 
@@ -55,6 +54,7 @@ class Map extends React.Component {
                                 fill= {d.properties.color}
                                 stroke="#FFFFFF"
                                 strokeWidth={ 0.5}
+                                text="prueba"
                             />
                         ))
                     :
