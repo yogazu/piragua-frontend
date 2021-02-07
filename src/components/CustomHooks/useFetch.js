@@ -2,15 +2,13 @@ import {useState,useEffect} from "react"
 
 
 function useFetch (url,initialState){
-    
-    
+
     const [data, setData ]       = useState(initialState)
     const [loading, setLoading ] = useState(false)
     const [error,  setError]     = useState(null) 
     
-    
     function getData(){
-       
+
         setLoading(true)
        
         fetch(url)
@@ -27,7 +25,6 @@ function useFetch (url,initialState){
     }  
     
     useEffect(() => {
-       
         getData()
     },[])
 
