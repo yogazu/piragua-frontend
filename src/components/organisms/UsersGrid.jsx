@@ -1,5 +1,5 @@
 import React from "react"
-import withLoader from "../HOC/withLoader"
+import withLoader from "../hoc/withLoader"
 import UserCard from "../molecules/UserCard"
 
 

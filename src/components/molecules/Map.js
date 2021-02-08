@@ -37,6 +37,7 @@ class Map extends React.Component {
 
     render() {
         const {x, y, rx, ry, zoom, geoData} = this.state;
+        
         const projection =  d3.geoMercator()
                 .scale(9500)
                 .center([-73.4, 6.8])
