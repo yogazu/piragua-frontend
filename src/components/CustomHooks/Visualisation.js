@@ -46,7 +46,7 @@ function Visualisation({geoData}) {
    
   return (
      
-    <svg width="30vw" height="85vh" >
+    <svg width="30vw" height="65vh" >
         <Map
             x={width / 2 || 0}
             y={height / 2 || 0}

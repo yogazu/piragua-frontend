@@ -32,7 +32,7 @@ const MunicipioxTerritorio = ({idTerritorio}) => {
           style={{ width: 300 }}
           renderInput={(params) => 
             <TextField {...params} 
-              label= "Municipios" variant="outlined" 
+              label= "Municipios" variant="filled" 
             />}
           onChange={(event,newValue) => {
               setValue(newValue);

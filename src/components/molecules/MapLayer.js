@@ -2,7 +2,7 @@ import React, {useMemo} from "react";
 import * as d3 from "d3";
 
 var width = 1000,
-   height = 600;
+   height = 400;
         
 function MapLayer({geoData, rx, ry, x, y, zoom, className,color}) {
    

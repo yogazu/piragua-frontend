@@ -3,7 +3,7 @@ import useFetch from "../CustomHooks/useFetch"
 import TextField from "@material-ui/core/TextField"
 import Autocomplete from "@material-ui/lab/Autocomplete"
 import MunicipioxTerritorio from "./MunicipiosxTerritorio"
-import DatosNivelSubsiguiente from "../molecules/DatosNivelSubsiguiente"
+import DatosNivelSubsiguiente from "./DatosNivelSubsiguiente"
 
 
 const Territoriales = ({ }) => {
@@ -12,8 +12,6 @@ const Territoriales = ({ }) => {
           useFetch("http://piraguacorantioquia.com.co:8020/core/territorial/get-all",[ ])
     const [valueTerritorio, setValueTerritorio] = useState(territorial[0]);
    
-   
-
     return (
       <div className = "ed-grid m-grid-3">
           <div className="ed-grid">
@@ -28,7 +26,11 @@ const Territoriales = ({ }) => {
               options={territorial.data}
               getOptionLabel={(option) => option.nombre}
               style={{ width: 350 }}
-              renderInput={(params) => <TextField {...params} label= "Territorial" variant="outlined" />}
+              renderInput={(params) => 
+                <TextField {...params} 
+                  label= "Territorial" 
+                  variant="filled" 
+                />}
               onChange={(event, newValue) => {
                   setValueTerritorio(newValue)
               }}

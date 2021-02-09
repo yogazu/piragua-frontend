@@ -1,9 +1,9 @@
 import React from "react"
-import General from "./pages/General";
+
 import Territoriales from "./organisms/Territoriales";
 import MunicipioxTerritorio from "./organisms/MunicipiosxTerritorio";
-import DatosNivelSubsiguiente from "./molecules/DatosNivelSubsiguiente";
-import DashboardPiragua from "./pages/DashboardPiragua";
+import DatosNivelSubsiguiente from "./organisms/DatosNivelSubsiguiente";
+import DashboardPiragua from "./templates/DashboardPiragua";
 import Formulario from './pages/Formulario'
 import Datos from './pages/Datos'
 import Dato from './pages/Dato'
@@ -12,6 +12,12 @@ import MainMenu from "./organisms/MainMenu"
 import History from "./pages/History";
 import Home from "./pages/Home";
 import Users from "./pages/Users";
+import RedAutomatica from "./pages/RedAutomatica";
+import ListaEstacionLluvia from "./organisms/ListaEstacionLluvia";
+import ReporteDatosLluvia from "./organisms/ReporteDatosLluvia";
+import LineaChart from "./molecules/LineChart";
+
+
 
 const AppRouter = () => (
 
@@ -26,10 +32,14 @@ const AppRouter = () => (
       <Route path="/historial"  component = { History }/>
       <Route path="/usuarios"  component = { Users }/>
       <Route path="/territoriales" component = { Territoriales}/>
-      <Route path="/general" component = { General}/>
       <Route path="/dashboard" component = { DashboardPiragua}/>
       <Route path="/municipios/:idTerritorio" component = { MunicipioxTerritorio}/>
       <Route path="/nivelsubsiguiente"  component = { DatosNivelSubsiguiente }/>
+      <Route path="/redautomatica" component = {RedAutomatica}/>
+      <Route path="/listaestacionlluvia" component = {ListaEstacionLluvia}/>
+      <Route path="/reportedatoslluvia" component= {ReporteDatosLluvia} />
+      <Route path="/lineachart" component= {LineaChart} />
+     
       <Route component = { () => (
         <div className="ed-grid">
           <h1>error 400</h1>
@@ -44,7 +54,5 @@ const AppRouter = () => (
 
 
 )
-
-
 
 export default AppRouter

@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^12.6.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
+    "anychart": "^8.9.0",
     "aws-sdk": "latest",
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
@@ -27,6 +28,7 @@
     "camelcase": "^6.1.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "chartist": "^0.11.4",
+    
     "d3": "^6.3.1",
     "d3-geo": "^2.0.1",
     "d3-geo-projection": "^3.0.0",
@@ -43,6 +45,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.9.2",
     "eslint-webpack-plugin": "^2.1.0",
+    "express": "latest",
     "file-loader": "6.1.1",
     "fontsource-roboto": "^4.0.0",
     "fs-extra": "^9.0.1",
@@ -70,7 +73,7 @@
     "react-chartist": "^0.14.3",
     "react-dev-utils": "^11.0.1",
     "react-dom": "^17.0.1",
-    "react-google-maps": "^9.4.5",
+    "react-google-maps": "^7.3.0",
     "react-redux": "^7.2.2",
     "react-refresh": "^0.8.3",
     "react-router-dom": "^5.2.0",
@@ -88,8 +91,7 @@
     "webpack": "4.44.2",
     "webpack-dev-server": "3.11.0",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "5.1.4",
-    "express": "latest"
+    "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
     "start": "node scripts/start.js",

@@ -54,7 +54,7 @@ class Map extends React.Component {
                                 className="municipios"
                                 fill= {d.properties.color}
                                 stroke="#FFFFFF"
-                                strokeWidth={ 0.5}
+                                strokeWidth={ 0.6}
                                 text="prueba"
                             />
                         ))

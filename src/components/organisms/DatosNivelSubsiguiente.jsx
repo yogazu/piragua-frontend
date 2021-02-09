@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import NivelesSubsigiente from "./NivelesSubsiguiente"
+import NivelesSubsigiente from "../molecules/NivelesSubsiguiente"
 import axios from "axios";
 
 const datosUno = [ 
@@ -35,7 +35,7 @@ class DatosNivelSubsiguiente extends Component {
         datos: []
        }
     }  
-
+    //ese servicio no funciona por eso se esta utilizando datosUno
     componentDidMount () {
         axios.get(`http://piraguacorantioquia.com.co:8020/core/niveles-subsiguientes/get-all-nss1`)
         .then(response => this.setState({
@@ -49,9 +49,6 @@ class DatosNivelSubsiguiente extends Component {
         
         return (<NivelesSubsigiente datosNivelSubsiguiente  = {datosUno}/>)
     }
-
-   
-
 }
 
 
