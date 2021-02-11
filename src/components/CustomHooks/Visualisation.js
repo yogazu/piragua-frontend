@@ -3,6 +3,8 @@ import useDimensions from "./useDimensions";
 import Map from "../molecules/Map"
 
 const initRxRy = {rx: 137, ry: 173};
+const width = 750;
+const height = 600;
 
 function Visualisation({geoData}) {
 
@@ -44,20 +46,22 @@ function Visualisation({geoData}) {
         e.preventDefault();
     };
    
+    
   return (
-     
-    <svg width="30vw" height="65vh" >
-        <Map
-            x={width / 2 || 0}
-            y={height / 2 || 0}
-            rx={initRxRy.rx}
-            ry={initRxRy.ry}
-            delta={delta}
-            geoData={geoData}
-            zoom={zoom}
-            rotate={mouseObj.rotate}
-        />
-    </svg>
+
+        <svg width="584" height="465" >
+            <Map
+                x={width / 2 || 0}
+                y={height / 2 || 0}
+                rx={initRxRy.rx}
+                ry={initRxRy.ry}
+                delta={delta}
+                geoData={geoData}
+                zoom={zoom}
+                rotate={mouseObj.rotate}
+            />
+        </svg>
+  
 );
 }
 

@@ -24,23 +24,20 @@ const MunicipioxTerritorio = ({idTerritorio}) => {
 
   return (
     <div className = "ed-grid">
-      { municipios.data ?
         <Autocomplete
-          id={municipios.data.id}
-          options={municipios.data}
-          getOptionLabel={(option) => option.nombre}
-          style={{ width: 300 }}
+          id={municipios.data ? municipios.data.id : 0}
+          options={municipios.data ? municipios.data : []}  
+          getOptionLabel={(option) => option ? option.nombre : ""}
+          style={{ width: 350 }}
+          
           renderInput={(params) => 
             <TextField {...params} 
-              label= "Municipios" variant="filled" 
+              label= "Municipios" variant="filled" color = "primary" 
             />}
           onChange={(event,newValue) => {
               setValue(newValue);
           }}
         />
-      :
-        <h1></h1>
-      }
     </div>
   )
 }

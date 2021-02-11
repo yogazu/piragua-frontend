@@ -1,9 +1,9 @@
 import React from "react"
 
-import Territoriales from "./organisms/Territoriales";
-import MunicipioxTerritorio from "./organisms/MunicipiosxTerritorio";
+
+
 import DatosNivelSubsiguiente from "./organisms/DatosNivelSubsiguiente";
-import DashboardPiragua from "./templates/DashboardPiragua";
+import Piragua from "./templates/Piragua";
 import Formulario from './pages/Formulario'
 import Datos from './pages/Datos'
 import Dato from './pages/Dato'
@@ -16,7 +16,7 @@ import RedAutomatica from "./pages/RedAutomatica";
 import ListaEstacionLluvia from "./organisms/ListaEstacionLluvia";
 import ReporteDatosLluvia from "./organisms/ReporteDatosLluvia";
 import LineaChart from "./molecules/LineChart";
-
+import Dashboard from "./pages/Dashboard";
 
 
 const AppRouter = () => (
@@ -31,15 +31,13 @@ const AppRouter = () => (
       <Route path="/historial/:valor"  component = { History }/>
       <Route path="/historial"  component = { History }/>
       <Route path="/usuarios"  component = { Users }/>
-      <Route path="/territoriales" component = { Territoriales}/>
-      <Route path="/dashboard" component = { DashboardPiragua}/>
-      <Route path="/municipios/:idTerritorio" component = { MunicipioxTerritorio}/>
+      <Route path="/piragua" component = { Piragua}/>
       <Route path="/nivelsubsiguiente"  component = { DatosNivelSubsiguiente }/>
       <Route path="/redautomatica" component = {RedAutomatica}/>
       <Route path="/listaestacionlluvia" component = {ListaEstacionLluvia}/>
       <Route path="/reportedatoslluvia" component= {ReporteDatosLluvia} />
       <Route path="/lineachart" component= {LineaChart} />
-     
+      <Route path="/dashboard" component= {Dashboard} />
       <Route component = { () => (
         <div className="ed-grid">
           <h1>error 400</h1>

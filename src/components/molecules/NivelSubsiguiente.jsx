@@ -2,7 +2,7 @@ import React from "react"
 import TextField from "@material-ui/core/TextField"
 import Autocomplete from "@material-ui/lab/Autocomplete"
 
-const NivelesSubsiguiente = ({datosNivelSubsiguiente}) => {
+const NivelSubsiguiente = ({datosNivelSubsiguiente}) => {
  
   return (
       <div className = "ed-grid">
@@ -26,5 +26,5 @@ const NivelesSubsiguiente = ({datosNivelSubsiguiente}) => {
   )
 }
 
-export default NivelesSubsiguiente
+export default NivelSubsiguiente
 

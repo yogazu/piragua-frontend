@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import NivelesSubsigiente from "../molecules/NivelesSubsiguiente"
+import NivelSubsigiente from "../molecules/NivelSubsiguiente"
 import axios from "axios";
 
 const datosUno = [ 
@@ -25,7 +25,6 @@ const datosUno = [
     }
 ]
 
-
 class DatosNivelSubsiguiente extends Component {
 
     constructor (props){
@@ -43,14 +42,11 @@ class DatosNivelSubsiguiente extends Component {
         }))
       }
    
-
     render(){
         const {datos} = this.state
         
-        return (<NivelesSubsigiente datosNivelSubsiguiente  = {datosUno}/>)
+        return (<NivelSubsigiente datosNivelSubsiguiente  = {datosUno}/>)
     }
 }
-
-
 
 export default DatosNivelSubsiguiente

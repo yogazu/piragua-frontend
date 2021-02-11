@@ -39,12 +39,12 @@ class Map extends React.Component {
         const {x, y, rx, ry, zoom, geoData} = this.state;
         
         const projection =  d3.geoMercator()
-                .scale(9500)
-                .center([-73.4, 6.8])
+                .scale(10000)
+                .center([-73.7, 6.7])
                 .rotate([0,0])
 
         return (
-            <g className="municipios">
+            <g>
                 {
                     (geoData.length == 1) ?
                         geoData[0].map((d,i) => (
