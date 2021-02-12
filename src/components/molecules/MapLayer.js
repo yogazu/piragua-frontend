@@ -6,10 +6,15 @@ var width = 1000,
         
 function MapLayer({geoData, rx, ry, x, y, zoom, className,color}) {
    
-    const projection =  d3.geoMercator()
-                .scale(10000)
-                .center([-76, 7])
-                .rotate([0, 0])
+    const projection = useMemo(
+        () =>
+            d3
+                .geoOrthographic()
+                .scale(zoom)
+                .translate([x, y])
+                .rotate([rx, -ry]),
+        [rx, ry, x, y, zoom]
+    );
   
   
 

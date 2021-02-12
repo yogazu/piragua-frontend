@@ -35,6 +35,7 @@ class  NivelCaudal extends React.Component {
                 <div className="ed-grid">
                     <ListaNivelCaudal/>
                 </div>
+                <br/>
                 <div className="ed-grid">
                     <ReporteDatosNivelCaudal/>
                 </div>

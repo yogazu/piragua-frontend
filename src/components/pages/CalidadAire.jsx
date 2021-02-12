@@ -34,6 +34,7 @@ class  CalidadAire extends React.Component {
                 <div className="ed-grid">
                     <ListaCalidadAire/>
                 </div>
+                <br/>
                 <div className="ed-grid">
                     <ReporteDatosCalidadAire/>
                 </div>

@@ -29,11 +29,13 @@ class MapChart extends React.Component  {
             });
         });
     };
-
+  
+    
+  
   render() {
     const {geoData} = this.state;
     return (
-      <Visualisation geoData={geoData} />
+            <Visualisation geoData={geoData} />
     );
 }
   

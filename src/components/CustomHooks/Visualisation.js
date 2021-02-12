@@ -3,8 +3,7 @@ import useDimensions from "./useDimensions";
 import Map from "../molecules/Map"
 
 const initRxRy = {rx: 137, ry: 173};
-const width = 750;
-const height = 600;
+
 
 function Visualisation({geoData}) {
 
@@ -45,11 +44,18 @@ function Visualisation({geoData}) {
         setZoom(zoom + e.deltaY);
         e.preventDefault();
     };
-   
+    
     
   return (
 
-        <svg width="584" height="465" >
+        <svg 
+        ref={ref}
+            width="584" 
+            height="465"
+           
+            
+            onContextMenu={e => e.preventDefault()} 
+        >
             <Map
                 x={width / 2 || 0}
                 y={height / 2 || 0}

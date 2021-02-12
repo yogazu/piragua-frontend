@@ -23,8 +23,7 @@ class LineChartC extends Component {
     .tickFormat(d => `${d}`);
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(nextProps)
-    console.log(prevState)
+    
     if (!nextProps.data) return null; // data hasn't been loaded yet so do nothing
     const {data} = nextProps;
     const {xScale, yScale, lineGenerator} = prevState;

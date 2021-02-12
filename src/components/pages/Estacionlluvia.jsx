@@ -34,6 +34,7 @@ class  EstacionLluvia extends React.Component {
                 <div className="ed-grid">
                     <ListaEstacionLluvia/>
                 </div>
+                <br/>
                 <div className="ed-grid">
                     <ReporteDatosLluvia/>
                 </div>

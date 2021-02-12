@@ -1,6 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 import { geoEqualEarth, geoPath } from "d3-geo"
+import axios from "axios"
 
 class Map extends React.Component {
     state = {
@@ -14,6 +15,8 @@ class Map extends React.Component {
     };
 
     static getDerivedStateFromProps(props, state) {
+        console.log(props)
+        console.log(state)
         let {x, y, rx, ry, zoom, initialZoom, geoData} = state;
         const {delta, rotate} = props;
 
@@ -38,28 +41,30 @@ class Map extends React.Component {
     render() {
         const {x, y, rx, ry, zoom, geoData} = this.state;
         
+        console.log(geoData)
         const projection =  d3.geoMercator()
-                .scale(10000)
-                .center([-73.7, 6.7])
+                .scale(8000)
+                .center([-73.05, 6.7])
                 .rotate([0,0])
 
         return (
             <g>
-                {
-                    (geoData.length == 1) ?
-                        geoData[0].map((d,i) => (
-                            <path
-                                key={ `path-${ i }` }
-                                d={geoPath().projection(projection)(d) }
-                                className="municipios"
-                                fill= {d.properties.color}
-                                stroke="#FFFFFF"
-                                strokeWidth={ 0.6}
-                                text="prueba"
-                            />
-                        ))
-                    :
-                    <path></path>     
+                {(geoData.length == 1) ?
+                    geoData[0].map((d,i) => (
+                        <path
+                            key={ `path-${ i }` }
+                            d={geoPath().projection(projection)(d) }
+                            className="municipios"
+                            fill= {d.properties.color}
+                            stroke="#FFFFFF"
+                            strokeWidth={ 0.7}
+                            text={d.properties.nombre}
+                        />
+                       
+                    ))
+                    
+                :
+                <path></path>     
                 }
             </g>
         )

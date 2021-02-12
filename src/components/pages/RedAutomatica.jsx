@@ -10,6 +10,7 @@ const RedAutomatica = () => {
         <div className="ed-grid">
             <h1>RED AUTOMATICA</h1>
         </div>
+        <br/>
         <div className="ed-grid lg-grid-3">
             <div className="ed-grid ">
                 <EstacionLluvia/>

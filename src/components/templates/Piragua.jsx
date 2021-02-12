@@ -8,6 +8,7 @@ const Piragua = () => {
         <div className="ed-grid">
             <Dashboard/>
         </div>
+        <br/>
         <div className="ed-grid">
             <RedAutomatica/>
         </div>
