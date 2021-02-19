@@ -1,4 +1,4 @@
-import { ACT_TO_MUNICIPIOS, ADD_TO_CART } from "./actions"
+import { ACT_TO_MUNICIPIOS, ADD_TO_CART , ACT_TO_MAPA} from "./actions"
 
 
 const addToCart = id => ({
@@ -11,4 +11,9 @@ const actToMunicipios = id => ({
     id
 })
 
-export {addToCart,actToMunicipios}
+const actToMapa = id => ({
+    type : ACT_TO_MAPA,
+    id
+})
+
+export {addToCart,actToMunicipios,actToMapa}

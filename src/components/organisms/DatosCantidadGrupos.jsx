@@ -1,14 +1,8 @@
 import React, { Component } from "react"
 import axios from "axios";
 import CardPiragua from "../molecules/CardPiragua";
+import urlCantidadGrupos from "../../data/cantidadDeGrupos.json"
 
-const datosUno = [ 
-    {
-        "id"    : 1,
-        "name"  : "Cantidad Grupos",
-        "valor" : "2",
-    }
-]
 
 class DatosCantidadGrupos extends Component {
     constructor (props){
@@ -26,8 +20,8 @@ class DatosCantidadGrupos extends Component {
       }
     render(){
         const {datos} = this.state
-        return (<CardPiragua descripcion = {datosUno[0].name} 
-                         valor  = {datosUno[0].valor} 
+        return (<CardPiragua descripcion = {urlCantidadGrupos.name} 
+                         valor  = {urlCantidadGrupos.valor} 
                 />)
 
                

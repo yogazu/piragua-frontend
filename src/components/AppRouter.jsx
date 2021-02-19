@@ -1,13 +1,11 @@
 import React from "react"
-
-
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
 import DatosNivelSubsiguiente from "./organisms/DatosNivelSubsiguiente";
 import Piragua from "./templates/Piragua";
 import Formulario from './pages/Formulario'
 import Datos from './pages/Datos'
 import Dato from './pages/Dato'
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import MainMenu from "./organisms/MainMenu"
 import History from "./pages/History";
 import Home from "./pages/Home";
@@ -43,8 +41,6 @@ const AppRouter = () => (
           <h1>error 400</h1>
           <span>página no encontrada</span>
         </div> 
-
-
       )}/>
     </Switch>
 

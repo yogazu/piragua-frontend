@@ -1,41 +1,46 @@
-import React, { useEffect, useState } from"react"
+import React, {  useState } from"react"
 import useFetch from "../CustomHooks/useFetch"
 import TextField from "@material-ui/core/TextField"
 import Autocomplete from "@material-ui/lab/Autocomplete"
-import MunicipioxTerritorio from "../molecules/MunicipiosxTerritorio"
+import { actToMapa, actToMunicipios } from "../../redux/actionCreators"
+import {connect } from "react-redux"
 
-const Territorial= () => {
+
+const Territorial= ({actMunicipios}) => {
 
     const territorial = 
           useFetch("http://piraguacorantioquia.com.co:8020/core/territorial/get-all",[ ])
-    const [valueTerritorio, setValueTerritorio] = useState(territorial[0]);
+    
    
     return (
       <>
-        <div className="ed-grid">
-          <h3><center>Territorial</center></h3>
           <Autocomplete
               id={territorial.data.id}
               options={territorial.data}
               getOptionLabel={(option) => option.nombre}
               style={{ width: 350 }}
               renderInput={(params) => 
-                <TextField {...params} 
-                  label= "Territorial" 
-                  variant="filled" 
-                />}
-              onChange={(event, newValue) => {
-                  setValueTerritorio(newValue)
-            }}
+                  <TextField {...params} 
+                    label= "Territorial" 
+                    variant="filled" 
+                  />}
+              onChange={(event, newValue) => actMunicipios(newValue  ? newValue :"")}
           />
-        </div>
-        <div className = "ed-grid">
-            <h3><center>Municipio</center></h3>
-            
-              <MunicipioxTerritorio idTerritorio = {valueTerritorio ? valueTerritorio.id : ""}></MunicipioxTerritorio>
-            
-        </div>
       </>
     )
 }
-export default Territorial
+
+
+
+const mapStateToProps = () => ({})
+
+const mapDispatchToProps = dispatch => (
+  {
+    actMunicipios(data){
+      dispatch(actToMunicipios(data.id) )
+      dispatch(actToMapa(data.nombre))
+    }
+  }
+)
+
+export default  connect(mapStateToProps,mapDispatchToProps) (Territorial)

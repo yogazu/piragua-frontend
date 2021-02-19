@@ -1,11 +1,10 @@
-import { any } from "prop-types";
 import { createStore } from "redux";
-import { ACT_TO_MUNICIPIOS, ADD_TO_CART } from "./actions";
+import { ACT_TO_MUNICIPIOS, ADD_TO_CART, ACT_TO_MAPA } from "./actions";
 
 const initialStote = {
  cart:[],
- territorio:any
- 
+ territorioActual:"",
+ nombreTerritorio:""
 }
 
 const rootReducer = (state = initialStote, action) => {
@@ -15,14 +14,20 @@ const rootReducer = (state = initialStote, action) => {
             ...state,
             cart: state.cart.concat(action.id)
         }
+
     if(action.type === ACT_TO_MUNICIPIOS)
-    console.log("dos")
+        
         return {
             ...state,
-           
-            territorio: action.id
-            
+            territorioActual: action.id
         }
+    
+    if(action.type === ACT_TO_MAPA)
+        console.log(action)
+        return {
+            ...state,
+            nombreTerritorio: action.id
+    }
 
 return state
 

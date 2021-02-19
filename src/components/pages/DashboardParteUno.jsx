@@ -1,7 +1,7 @@
 import React from "react"
-import ControlledAccordions from "../molecules/ControlledAccordions"
 import DatosNumeroPiraguero from "../organisms/DatosNumeroPiraguero"
 import DatosEstacionesZona from "../organisms/DatosEstacionesZona"
+import DatosFuentesMonitoreadas from "../organisms/DatosFuentesMonitoreadas"
 // @material-ui/icons
 import GridContainer from "../CustomHooks/GridContainer"
 
@@ -11,7 +11,7 @@ const DashboardParteUno = () => {
             <DatosNumeroPiraguero/>
             <br/>
                 <GridContainer>     
-                    <ControlledAccordions/>
+                    <DatosFuentesMonitoreadas/>
                 </GridContainer>  
             <br/>
             <DatosEstacionesZona/>

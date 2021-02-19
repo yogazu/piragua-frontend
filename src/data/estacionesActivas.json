@@ -1,0 +1,6 @@
+{
+    "id"    : 1,
+    "name"  : "Estaciones activas",
+    "valor" : "5",
+    "descripcion" : "% En operación"
+}

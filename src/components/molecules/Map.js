@@ -1,7 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
-import { geoEqualEarth, geoPath } from "d3-geo"
-import axios from "axios"
+import {  geoPath } from "d3-geo"
+
 
 class Map extends React.Component {
     state = {

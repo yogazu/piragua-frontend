@@ -29,9 +29,7 @@ class MapChart extends React.Component  {
             });
         });
     };
-  
-    
-  
+
   render() {
     const {geoData} = this.state;
     return (

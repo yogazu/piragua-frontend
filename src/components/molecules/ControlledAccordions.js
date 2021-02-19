@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ControlledAccordions() {
+export default function ControlledAccordions ( {nombre, total, datos} ) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -68,35 +68,30 @@ export default function ControlledAccordions() {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography className={classes.heading}>
+          <Typography component={'span'} className={classes.heading}>
               <CardIcon color="info"><Opacity/>
               </CardIcon>
          </Typography>
-          <Typography className={classes.secondaryHeading}> 
+          <Typography component={'span'}
+                className={classes.secondaryHeading}> 
                 <h1>
                 <p className={classes.cardCategory}>
-                    Fuentes Monitoreadas
+                    {nombre}
                  </p>
                 </h1>
                 <h1 className={classes.cardTitle}>
-                    12<small></small>
+                    {total}
                 </h1>
             </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            <h3 className={classes.cardTitle}>
-                3 Fuentes Abastecedoras<small></small>
-            </h3>
-            <h3 className={classes.cardTitle}>
-                2 Fuentes Subterraneas<small></small>
-            </h3>
-            <h3 className={classes.cardTitle}>
-                1 Fuenente ODC<small></small>
-            </h3>
-            <h3 className={classes.cardTitle}>
-                6 Fuente PORH<small></small>
-            </h3>
+          <Typography component={'span'} >
+              { datos.map(d => (
+                <h3 key = {d.valor+d.name} className={classes.cardTitle}>
+                    <small>{d.valor} {d.name}</small>
+                </h3>
+                ))
+             }
           </Typography>
         </AccordionDetails>
       </Accordion>
