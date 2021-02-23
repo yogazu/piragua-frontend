@@ -48,7 +48,7 @@ const MunicipioxTerritorio = ({territorioActual}) => {
 }
 
 const mapStateToProps = state => ({
-      territorioActual: state.territorioActual
+      territorioActual: state.rootActTerritorio.territorioActual
 })
 
 const mapDispatchToProps = () => ({})

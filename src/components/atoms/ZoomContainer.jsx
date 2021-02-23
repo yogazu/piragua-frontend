@@ -17,7 +17,6 @@ export function ZoomContainer({ children }) {
    
     const zoom = d3.zoom().on("zoom", function() {
       setTransform( d3.zoomTransform(selection.node()));
-
     });
    
     selection.call(zoom);

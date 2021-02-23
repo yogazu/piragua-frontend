@@ -16,7 +16,7 @@ class MapZoom extends React.Component  {
     loadData = () => {
         Promise.all([
           d3.json
-          ("https://piragua.s3.amazonaws.com/territorial_cm.geojson")
+          ("https://piragua.s3.amazonaws.com/municipio0.json")
         ]).then(([municipios]) => {
             this.setState({
               geoData: [
@@ -28,12 +28,11 @@ class MapZoom extends React.Component  {
 
     render() {
       const {geoData} = this.state;
-
-      const territorio = geoData[0] && geoData[0].filter(u => u.properties.nombre === this.props.nombreTerritorio)
+      const territorio = geoData[0] && geoData[0].filter(u => u.properties.territorial.nombre === this.props.nombreTerritorio)
       const mercator = d3.geoMercator()
                   .scale(9000)
                   .center([-73.8, 6.6]) ;
-
+      console.log(geoData[0])
 
     return (
          (territorio !== undefined && territorio.length > 0) ?
@@ -46,7 +45,7 @@ class MapZoom extends React.Component  {
 }
 
 const mapStateToProps = state => ({
-  nombreTerritorio: state.nombreTerritorio
+  nombreTerritorio: state.rootActTerritorio.nombreTerritorio
 })
 
 const mapDispatchToProps = () => ({})

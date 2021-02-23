@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
-import { addToCart } from '../../redux/actionCreators';
 import {connect} from "react-redux"
 
 const DatosCard = ({id,title,image,price,addDatoToCart})=> (
@@ -49,8 +48,6 @@ DatosCard.defaultProps = {
 
 const mapStateToProps = () => ({})
 const mapDispatchToProps = dispatch => ({
-    addDatoToCart(id) {
-        dispatch(addToCart(id))
-    }
+    
 })
 export default  connect(mapStateToProps,mapDispatchToProps)  (DatosCard);

@@ -1,5 +1,4 @@
 import React from "react"
-import * as d3 from "d3";
 import { Stage }  from "../molecules/Stage"
 import { ZoomContainer }  from "../atoms/ZoomContainer"
 import {  geoPath } from "d3-geo";
@@ -17,14 +16,24 @@ const DrawMap = ({data,mercator}) =>{
                                 key={index + feature.properties.nombre}
                                 id={feature.properties.id}
                                 d={geoPath().projection(mercator)(feature) }
-                                fill= {feature.properties.color}
+                                fill= {feature.properties.territorial.color}
                                 stroke="#FFFFFF"
-                                strokeWidth={ 0.5}
-                                text = {feature.properties.nombre}
+                                strokeWidth={ 0.01}
                             >
                             </path>
-                            <text   x={ -75.53233930508617}
-                                    y={6.188007952992682} className="heavy"></text>
+                            
+                            <circle
+                                    key={index}
+                                    cx={feature.properties.centroide.coordinates[0]}
+                                    cy={feature.properties.centroide.coordinates[1]}
+                                    r={10}
+                                    fill="red"
+                                    stroke="#000"
+                                    strokeWidth={0.1}
+                                    onClick={() => console.log(feature.properties.nombre)}
+                            />
+                            <text  className="tooltip"  dx={ -75.70823819790733}
+                                    dy={6.032462270070983} className="heavy"></text>
                         </>
                     );
                   })

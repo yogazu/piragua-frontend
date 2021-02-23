@@ -1,6 +1,5 @@
 import React from "react"
-import {NavLink} from 'react-router-dom'
-import CartCounter from "../atoms/CartCounter"
+
 
 const MainMenu = () => (
     <header className = "main-header">
