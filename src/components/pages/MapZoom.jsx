@@ -28,7 +28,7 @@ class MapZoom extends React.Component  {
 
     render() {
       const {geoData} = this.state;
-      let mapZomm = 7000
+      let mapZomm = 7900
       let centroide = [-74.8, 6.6]
       const width= 584 
       const height= 421
@@ -48,7 +48,7 @@ class MapZoom extends React.Component  {
          centroide = [datafilter[0].properties.centroide.coordinates[0],
                       datafilter[0].properties.centroide.coordinates[1]]
       } 
-
+     
       let mercator = d3.geoMercator()
                   .scale(mapZomm)
                   .center(centroide) 
@@ -56,9 +56,9 @@ class MapZoom extends React.Component  {
 
     return (
          (datafilter !== undefined && datafilter.length > 0) ?
-            <DrawMap data={datafilter}  mercator={mercator}></DrawMap>
+            <DrawMap data={datafilter}  mercator={mercator} indicador="nombre" ></DrawMap>
           :
-            <DrawMap data={geoData[0]}  mercator={mercator} width={width} height={height}></DrawMap>
+            <DrawMap data={geoData[0]}  mercator={mercator}  ></DrawMap>
         
     );
   }
@@ -66,9 +66,7 @@ class MapZoom extends React.Component  {
 
 const mapStateToProps = state => ({
   territorioActual: state.rootActTerritorio.territorioActual,
-  nombreTerritorio: state.rootActTerritorio.nombreTerritorio,
-  municipioActual : state.rootActTerritorio.municipioActual,
-  nombreMunicipio : state.rootActTerritorio.nombreMunicipio
+  municipioActual : state.rootActTerritorio.municipioActual
 
 })
 
