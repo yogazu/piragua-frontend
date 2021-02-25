@@ -2,14 +2,14 @@ import React, {  useState } from"react"
 import useFetch from "../CustomHooks/useFetch"
 import TextField from "@material-ui/core/TextField"
 import Autocomplete from "@material-ui/lab/Autocomplete"
-import { actToMapa, actToMunicipios } from "../../redux/actionCreators"
+import { actTerritorio } from "../../redux/actionCreators"
 import {connect } from "react-redux"
 
 
-const Territorial= ({actMunicipios}) => {
+const Territorial= ({actualizarxTerritorio}) => {
 
     const territorial = 
-          useFetch("http://piraguacorantioquia.com.co:8020/core/territorial/get-all",[ ])
+          useFetch("http://api-piragua.solupyme.com/api/v1/territorial/",[ ])
     
    
     return (
@@ -24,7 +24,7 @@ const Territorial= ({actMunicipios}) => {
                     label= "Territorial" 
                     variant="filled" 
                   />}
-              onChange={(event, newValue) => actMunicipios(newValue  ? newValue :"")}
+              onChange={(event, newValue) => actualizarxTerritorio(newValue  ? newValue :"")}
           />
       </>
     )
@@ -36,9 +36,8 @@ const mapStateToProps = () => ({})
 
 const mapDispatchToProps = dispatch => (
   {
-    actMunicipios(data){
-      dispatch(actToMunicipios(data.id) )
-      dispatch(actToMapa(data.nombre))
+    actualizarxTerritorio(data){
+      dispatch(actTerritorio(data) )
     }
   }
 )

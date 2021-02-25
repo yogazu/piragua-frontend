@@ -2,9 +2,10 @@ import React, { useEffect, useState } from"react"
 import TextField from "@material-ui/core/TextField"
 import Autocomplete from "@material-ui/lab/Autocomplete"
 import axios from "axios"
+import { actMunicipio } from "../../redux/actionCreators"
 import {connect } from "react-redux"
 
-const MunicipioxTerritorio = ({territorioActual}) => {
+const MunicipioxTerritorio = ({territorioActual,actualizarxMunicipio}) => {
   
   const [municipios,setMunicipios] = useState ({})
   const [value, setValue] = useState(municipios && municipios[0]);
@@ -14,7 +15,7 @@ const MunicipioxTerritorio = ({territorioActual}) => {
   useEffect(() => {
       if (territorioActual !== "" && territorioActual !== undefined) {
         setLoading(true)
-        axios.get(`http://piraguacorantioquia.com.co:8020/core/municipio/find-by-territorial/${territorioActual}/`)
+        axios.get(`http://api-piragua.solupyme.com/api/v1/municipio/find-by-territorial-uuid/${territorioActual}/`)
           .then(response => setMunicipios(response) )
           .then(response2 => setLoading(false))
           .catch (error =>{
@@ -27,7 +28,7 @@ const MunicipioxTerritorio = ({territorioActual}) => {
           setValue({}) 
         }
   },[territorioActual])
-
+ 
   return (
     <div className = "ed-grid">
         <Autocomplete
@@ -37,11 +38,10 @@ const MunicipioxTerritorio = ({territorioActual}) => {
           style={{ width: 350 }}
           renderInput={(params) => 
             <TextField {...params} 
-              label= "Municipios" variant="filled" color = "primary" 
+              label= "Municipios" variant="filled" color = "primary"
             />}
-          onChange={(event,newValue) => {
-              setValue(newValue);
-          }}
+            onChange={(event, newValue) => 
+              actualizarxMunicipio(newValue  ? newValue :"")}
         />
     </div>
   )
@@ -49,8 +49,14 @@ const MunicipioxTerritorio = ({territorioActual}) => {
 
 const mapStateToProps = state => ({
       territorioActual: state.rootActTerritorio.territorioActual
+     
+      
 })
 
-const mapDispatchToProps = () => ({})
+const mapDispatchToProps = dispatch => ({
+    actualizarxMunicipio(data){
+     dispatch(actMunicipio(data))
+  }
+})
 
 export default  connect(mapStateToProps,mapDispatchToProps) (MunicipioxTerritorio)

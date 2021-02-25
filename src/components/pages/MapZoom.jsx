@@ -16,7 +16,7 @@ class MapZoom extends React.Component  {
     loadData = () => {
         Promise.all([
           d3.json
-          ("https://piragua.s3.amazonaws.com/municipio0.json")
+          ("http://api-piragua.solupyme.com/api/v1/municipio/geo-all")
         ]).then(([municipios]) => {
             this.setState({
               geoData: [
@@ -28,24 +28,48 @@ class MapZoom extends React.Component  {
 
     render() {
       const {geoData} = this.state;
-      const territorio = geoData[0] && geoData[0].filter(u => u.properties.territorial.nombre === this.props.nombreTerritorio)
-      const mercator = d3.geoMercator()
-                  .scale(9000)
-                  .center([-73.8, 6.6]) ;
-      console.log(geoData[0])
+      let mapZomm = 7000
+      let centroide = [-74.8, 6.6]
+      const width= 584 
+      const height= 421
+
+      let  datafilter  = geoData[0] && geoData[0].filter(u =>  u.properties.uuid === this.props.municipioActual)
+      if (datafilter === undefined || datafilter.length === 0) {
+         
+        datafilter = geoData[0] && geoData[0].filter(u =>  u.properties.territorial.uuid === this.props.territorioActual)
+        
+         if (datafilter !== undefined && datafilter.length > 0) {
+            mapZomm = 30000
+            centroide = [datafilter[0].properties.territorial.centroide.coordinates[0],
+                        datafilter[0].properties.territorial.centroide.coordinates[1]]
+          }
+      }else{
+         mapZomm = 50000
+         centroide = [datafilter[0].properties.centroide.coordinates[0],
+                      datafilter[0].properties.centroide.coordinates[1]]
+      } 
+
+      let mercator = d3.geoMercator()
+                  .scale(mapZomm)
+                  .center(centroide) 
+                  .translate([width/2, height/2]);
 
     return (
-         (territorio !== undefined && territorio.length > 0) ?
-            <DrawMap data={territorio}  mercator={mercator}></DrawMap>
+         (datafilter !== undefined && datafilter.length > 0) ?
+            <DrawMap data={datafilter}  mercator={mercator}></DrawMap>
           :
-            <DrawMap data={geoData[0]}  mercator={mercator}></DrawMap>
+            <DrawMap data={geoData[0]}  mercator={mercator} width={width} height={height}></DrawMap>
         
     );
   }
 }
 
 const mapStateToProps = state => ({
-  nombreTerritorio: state.rootActTerritorio.nombreTerritorio
+  territorioActual: state.rootActTerritorio.territorioActual,
+  nombreTerritorio: state.rootActTerritorio.nombreTerritorio,
+  municipioActual : state.rootActTerritorio.municipioActual,
+  nombreMunicipio : state.rootActTerritorio.nombreMunicipio
+
 })
 
 const mapDispatchToProps = () => ({})

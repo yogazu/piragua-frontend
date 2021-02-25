@@ -11,36 +11,18 @@ class TerritoriosMap extends React.Component {
   componentDidMount() {
     const { data } = this.props;
     if (!data) return <></>;
-    const  svg = d3.select('svg')
-    .attr('width', width)
-    .attr('height', height);
-
-    // Add background
-    svg.append('rect')
-        .attr('class', 'background')
-        .attr('width', width)
-        .attr('height', height)
-        ;
     
-    var g = svg.append('g');
 
 
-    const projection = d3
-      .geoMercator()
-      .scale(130)
-      .translate([width / 2, height / 1.4]);
+    const zoom = d3.zoom()
+      .scaleExtent([1, 8])
+      .on("zoom", zoomed);
 
-    const path = d3.geoPath().projection(projection);
-    
-    const map = svg
-      .selectAll("path")
-      .data(data.feature)
-      .enter()
-      .append("path")
-      .attr("d", path)
-      .style("fill", "rgb(9, 157, 217)")
-      .style("stroke", "black")
-      .style("stroke-width", 0.5);
+    const svg = d3.create("svg")
+      .attr("viewBox", [0, 0, width, height])
+      .on("click", reset);
+
+    const g = svg.append("g");
 
       
 

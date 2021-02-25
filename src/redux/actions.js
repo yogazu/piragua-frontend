@@ -1,2 +1,2 @@
-export const ACT_TO_MUNICIPIOS  = "ACT_TO_MUNICIPIOS"
-export const ACT_TO_MAPA        = "ACT_TO_MAPA"
+export const ACT_TERRITORIO     = "ACT_TERRITORIO"
+export const ACT_MUNICIPIO      = "ACT_MUNICIPIO"

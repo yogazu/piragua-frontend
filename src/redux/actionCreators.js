@@ -1,13 +1,14 @@
-import { ACT_TO_MUNICIPIOS , ACT_TO_MAPA} from "./actions"
+import { ACT_TERRITORIO ,  ACT_MUNICIPIO } from "./actions"
 
-const actToMunicipios = id => ({
-    type : ACT_TO_MUNICIPIOS,
-    id
+const actTerritorio = data => ({
+    type : ACT_TERRITORIO,
+    data
 })
 
-const actToMapa = id => ({
-    type : ACT_TO_MAPA,
-    id
+
+const actMunicipio = data => ({
+    type : ACT_MUNICIPIO,
+    data
 })
 
-export {actToMunicipios,actToMapa}
+export {actTerritorio,actMunicipio}

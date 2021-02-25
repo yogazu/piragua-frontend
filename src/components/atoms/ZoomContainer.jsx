@@ -6,15 +6,20 @@ export function ZoomContainer({ children }) {
     
   const svgElement = useSvg();
   const [{ x, y, k }, setTransform] = useState({ x: 0, y: 0, k: 1 });
+  
+  
+  console.log("ZoomContainer")
   console.log(x  )
   console.log( y )
   console.log( k )
+  console.log(svgElement)
 
   useEffect(() => {
-   
+    console.log("useEffect")
+    console.log(svgElement)
     if (!svgElement) return;
     const selection = d3.select(svgElement);
-   
+    console.log(selection)
     const zoom = d3.zoom().on("zoom", function() {
       setTransform( d3.zoomTransform(selection.node()));
     });
@@ -23,6 +28,6 @@ export function ZoomContainer({ children }) {
     return () => selection.on(".zoom", null);
   }, [svgElement]);
   
-  console.log(children)
+ 
   return <g  transform={`translate(${x}, ${y}) scale(${k})`}>{children}</g>;
 }

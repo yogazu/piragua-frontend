@@ -9,9 +9,9 @@ const NivelSubsiguiente = ({datosNivelSubsiguiente}) => {
           { 
             datosNivelSubsiguiente ?
             <Autocomplete
-              id={datosNivelSubsiguiente.id}
+              id={datosNivelSubsiguiente.uuid}
               options={datosNivelSubsiguiente}
-              getOptionLabel={(option) => option.name}
+              getOptionLabel={(option) => option.nombre}
               style={{ width: 350 }}
               renderInput={(params) => 
                 <TextField {...params} 
