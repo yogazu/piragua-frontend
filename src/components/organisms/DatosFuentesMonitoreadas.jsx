@@ -10,24 +10,31 @@ class DatosFuentesMonitoreadas extends Component {
     constructor (props){
        super(props)
        this.state ={ 
-        datos: []
+        datos: [],
+        totalFuentes: []
        }
     }  
     //ese servicio no funciona por eso se esta utilizando datosUno
     componentDidMount () {
-        axios.get(`http://piraguacorantioquia.com.co:8020/core/niveles-subsiguientes/get-all-nss1`)
+        axios.get(`http://api-piragua.solupyme.com/api/v1/fuentes-componente/`)
         .then(response => this.setState({
             datos:response.data
+        }))
+        axios.get(`http://api-piragua.solupyme.com/api/v1/total-fuentes/`)
+        .then(response => this.setState({
+            totalFuentes:response.data
         }))
       }
     render(){
         const {datos} = this.state
+        const {totalFuentes} = this.state
+        console.log(totalFuentes)
         return (<> 
                     
                      <ControlledAccordions 
-                        nombre= {urlTotalFuentesMonitoreo.name} 
-                        total = {urlTotalFuentesMonitoreo.valor} 
-                        datos = {usrlFuentesMonitoreo}
+                        nombre= {totalFuentes.name} 
+                        total = {totalFuentes.total} 
+                        datos = {datos}
                      />
                    
                 </>)
