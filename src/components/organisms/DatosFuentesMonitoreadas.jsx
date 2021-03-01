@@ -1,10 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios";
 import ControlledAccordions from "../molecules/ControlledAccordions"
-import urlTotalFuentesMonitoreo from "../../data/totalFuentesMonitoreadas.json"
-import usrlFuentesMonitoreo from "../../data/fuentesMonitoreadas.json"
-
-
 
 class DatosFuentesMonitoreadas extends Component {
     constructor (props){
@@ -28,15 +24,13 @@ class DatosFuentesMonitoreadas extends Component {
     render(){
         const {datos} = this.state
         const {totalFuentes} = this.state
-        console.log(totalFuentes)
+       
         return (<> 
-                    
                      <ControlledAccordions 
                         nombre= {totalFuentes.name} 
                         total = {totalFuentes.total} 
                         datos = {datos}
                      />
-                   
                 </>)
     }
 }

@@ -2,6 +2,7 @@ import React from "react"
 import * as d3 from "d3";
 import DrawMap from "../atoms/DrawMap";
 import {connect } from "react-redux"
+import {  geoPath } from "d3-geo";
  
 class MapZoom extends React.Component  {
 
@@ -28,38 +29,38 @@ class MapZoom extends React.Component  {
 
     render() {
       const {geoData} = this.state;
-      let mapZomm = 7900
-      let centroide = [-74.8, 6.6]
+      
+      let centroide = [-74.8, 6.9]
       const width= 584 
       const height= 421
+      let  datafilter
+      let marca = ""
 
-      let  datafilter  = geoData[0] && geoData[0].filter(u =>  u.properties.uuid === this.props.municipioActual)
-      if (datafilter === undefined || datafilter.length === 0) {
-         
-        datafilter = geoData[0] && geoData[0].filter(u =>  u.properties.territorial.uuid === this.props.territorioActual)
-        
-         if (datafilter !== undefined && datafilter.length > 0) {
-            mapZomm = 30000
-            centroide = [datafilter[0].properties.territorial.centroide.coordinates[0],
-                        datafilter[0].properties.territorial.centroide.coordinates[1]]
-          }
-      }else{
-         mapZomm = 50000
-         centroide = [datafilter[0].properties.centroide.coordinates[0],
-                      datafilter[0].properties.centroide.coordinates[1]]
-      } 
-     
       let mercator = d3.geoMercator()
-                  .scale(mapZomm)
                   .center(centroide) 
                   .translate([width/2, height/2]);
 
+      if (geoData !== undefined && geoData.length > 0) {  
+             datafilter  = geoData[0] && geoData[0].filter(u =>  u.properties.uuid === this.props.municipioActual)
+          if (datafilter !== undefined && datafilter.length > 0) {
+              centroide = [datafilter[0].properties.centroide.coordinates[0],
+                          datafilter[0].properties.centroide.coordinates[1]]
+          }else{
+            datafilter = geoData[0] && geoData[0].filter(u =>  u.properties.territorial.uuid === this.props.territorioActual)
+            if (datafilter !== undefined && datafilter.length > 0) {
+              centroide = [datafilter[0].properties.territorial.centroide.coordinates[0],
+                          datafilter[0].properties.territorial.centroide.coordinates[1]]
+            }else {
+              datafilter = geoData[0].slice();
+              marca = "circulo"
+            }            
+          } 
+          mercator.center(centroide)
+          mercator.fitSize([width,height],{type:"FeatureCollection", features: datafilter})
+      }
+
     return (
-         (datafilter !== undefined && datafilter.length > 0) ?
-            <DrawMap data={datafilter}  mercator={mercator} indicador="nombre" ></DrawMap>
-          :
-            <DrawMap data={geoData[0]}  mercator={mercator}  ></DrawMap>
-        
+            <DrawMap data={datafilter}  mercator={mercator} indicador={marca}></DrawMap>
     );
   }
 }

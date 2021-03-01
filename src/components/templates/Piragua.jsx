@@ -15,5 +15,4 @@ const Piragua = () => {
     </>
     )
 }
-
 export default Piragua
