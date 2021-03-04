@@ -13,15 +13,15 @@ const columns = [
 ];
 
 const rows = [
-  { id: 1, apellido: 'Snow', nombre: 'Jon', edad: 35 , telefono:'312456789', lugar:'Damasco', zona:'Rural', genero:'H'},
-  { id: 2, apellido: 'Lannister', nombre: 'Cersei', edad: 42 , telefono:'312456789', lugar:'Damasco', zona:'Rural',genero:'H' },
-  { id: 3, apellido: 'Lannister', nombre: 'Jaime', edad: 45, telefono:'312456789', lugar:'Damasco', zona:'Rural',genero:'H' },
-  { id: 4, apellido: 'Stark', nombre: 'Arya', age: 16 , telefono:'312456789', lugar:'Damasco', zona:'Rural',genero:'H'},
-  { id: 5, apellido: 'Targaryen', nombre: 'Daenerys', edad: null, telefono:'312456789', lugar:'Damasco', zona:'Rural',genero:'H' },
-  { id: 6, apellido: 'Melisandre', nombre: null, edad: 150, telefono:'312456789', lugar:'Damasco', zona:'Rural',genero:'H' },
-  { id: 7, apellido: 'Clifford', nombre: 'Ferrara', edad: 44 , telefono:'312456789', lugar:'Damasco', zona:'Rural',genero:'H'},
-  { id: 8, apellido: 'Frances', nombre: 'Rossini', edad: 36 , telefono:'312456789', lugar:'Damasco', zona:'Rural',genero:'H'},
-  { id: 9, apellido: 'Roxie', nombre: 'Harvey', edad: 65 , telefono:'312456789', lugar:'Damasco', zona:'Rural',genero:'H'},
+  { id: 1, apellido: 'Arboleda', nombre: 'Daniela', edad: 35 , telefono:'312456789', lugar:'Damasco', zona:'Rural', genero:'H'},
+  { id: 2, apellido: 'Montaño', nombre: 'Ayole', edad: 42 , telefono:'310567890', lugar:'Damasco', zona:'Rural',genero:'H' },
+  { id: 3, apellido: 'Valencia', nombre: 'Luisa Fernanda', edad: 45, telefono:'312456789', lugar:'Damasco', zona:'Rural',genero:'H' },
+  { id: 4, apellido: 'Bolivar', nombre: 'Luz Dari ', edad: 21 , telefono:'315478909', lugar:'Damasco', zona:'Rural',genero:'H'},
+  { id: 5, apellido: 'Arenas', nombre: 'Jose Angel ', edad: 23, telefono:'0345678900', lugar:'Damasco', zona:'Rural',genero:'H' },
+  { id: 6, apellido: 'Arenas', nombre: 'Carlos Alberto ', edad: 31, telefono:'21976689', lugar:'Damasco', zona:'Rural',genero:'H' },
+  { id: 7, apellido: 'Gomez', nombre: 'Anderson', edad: 44 , telefono:'621345678', lugar:'Damasco', zona:'Rural',genero:'H'},
+  { id: 8, apellido: 'Gomez', nombre: 'Orlanda', edad: 36 , telefono:'9875467', lugar:'Damasco', zona:'Rural',genero:'H'},
+  { id: 9, apellido: 'Puerta', nombre: 'Manuel', edad: 65 , telefono:'4567890', lugar:'Damasco', zona:'Urbano',genero:'H'},
 ];
 
 export default function TablaDinamica() {
