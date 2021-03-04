@@ -32,6 +32,7 @@ class  NivelCaudal extends React.Component {
         return (
             
             <>
+                <h3><center>Niveles del Caudal</center></h3>
                 <div className="ed-grid">
                     <ListaNivelCaudal/>
                 </div>
@@ -39,12 +40,18 @@ class  NivelCaudal extends React.Component {
                 <div className="ed-grid">
                     <ReporteDatosNivelCaudal/>
                 </div>
+                <br/>
+                <h3><center>Nivel Caudal Diario</center></h3>
                 <div className="ed-grid">
                    <LineChart data={data} />
                 </div>
+                <br/>
+                <h3><center>Nivel Caudal Semanal</center></h3>
                 <div className="ed-grid">
                     <BarChartF data={data} />
                 </div>
+                <br/>
+                <h3><center>Nivel Caudal Mensual</center></h3>
                 <div className="ed-grid">
                     <LineChartB data={data} />
                 </div>

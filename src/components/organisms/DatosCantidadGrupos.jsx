@@ -11,7 +11,7 @@ class DatosCantidadGrupos extends Component {
         datos: []
        }
     }  
-    //ese servicio no funciona por eso se esta utilizando datosUno
+    //este servicio no funciona por eso se esta utilizando datosUno
     componentDidMount () {
         axios.get(`http://piraguacorantioquia.com.co:8020/core/niveles-subsiguientes/get-all-nss1`)
         .then(response => this.setState({
@@ -23,8 +23,6 @@ class DatosCantidadGrupos extends Component {
         return (<CardPiragua descripcion = {urlCantidadGrupos.name} 
                          valor  = {urlCantidadGrupos.valor} 
                 />)
-
-               
     }
 }
 

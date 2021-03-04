@@ -1,10 +1,10 @@
 import React from "react"
-import LineChartD from "../molecules/LineChartD"
-import LineChartA from "../molecules/LineChartA"
-import BarChartH from "../molecules/BarChartH"
-import ListaCalidadAire from "../organisms/ListaCalidadAire";
-import ReporteDatosCalidadAire from "../organisms/ReporteDatosCalidadAire";
-class  CalidadAire extends React.Component {
+import RedSocialGraficaTipos from "../molecules/RedSocialGraficaTipos"
+import RedSocialGraficaActividad from "../molecules/RedSocialGraficaActividad";
+import RedSocialEdadGenero from "../molecules/RedSocialEdadGenero";
+import RedSocialFiltrosTabla from "../molecules/RedSocialFiltrosTabla";
+
+class  RedSocialGraficas extends React.Component {
 
     state = {
         temps: {},
@@ -29,30 +29,18 @@ class  CalidadAire extends React.Component {
 
         const data = this.state.temps[this.state.city];
         return (
-            
             <>
-                <h3><center>Calidad Aire</center></h3>
                 <div className="ed-grid">
-                    <ListaCalidadAire/>
+                    <RedSocialGraficaTipos data={data} />
                 </div>
-                <br/>
                 <div className="ed-grid">
-                    <ReporteDatosCalidadAire/>
+                    <RedSocialGraficaActividad data={data} />
                 </div>
-                <br/>
-                <h3><center>Calidad Del Aire</center></h3>
                 <div className="ed-grid">
-                   <LineChartD data={data} />
+                    <RedSocialEdadGenero data={data} />
                 </div>
-                <br/>
-                <h3><center>Calidad Del Aire</center></h3>
                 <div className="ed-grid">
-                    <BarChartH data={data} />
-                </div>
-                <br/>
-                <h3><center>Calidad Del Aire</center></h3>
-                <div className="ed-grid">
-                    <LineChartA data={data} />
+                    <RedSocialFiltrosTabla data={data} />
                 </div>
             </>
         )
@@ -60,4 +48,4 @@ class  CalidadAire extends React.Component {
 
 }
 
-export default CalidadAire
+export default RedSocialGraficas

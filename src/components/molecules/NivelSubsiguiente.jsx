@@ -14,10 +14,9 @@ const NivelSubsiguiente = ({datosNivelSubsiguiente}) => {
               getOptionLabel={(option) => option.nombre}
               style={{ width: 350 }}
               renderInput={(params) => 
-                <TextField {...params} 
-                label= "Niveles Subsiguientes" variant="filled" 
-            />
-          }
+              <TextField {...params} 
+              label= "Niveles Subsiguientes" variant="filled" 
+              />}
             />
             :
             <h1>No existen Datos</h1>
