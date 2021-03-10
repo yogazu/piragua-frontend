@@ -8,6 +8,7 @@ const Dashboard = () => {
 
    return (
     <>
+        <br/>
         <ParametrosPrincipales/>
         <br/>
         <div className="ed-grid m-grid-4">

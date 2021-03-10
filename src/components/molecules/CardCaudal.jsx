@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(styles)
 
-const CardPiragua = ({ descripcion ,valor}) => {
+const CardCaudal = ({ descripcion ,valor}) => {
 
     
   const classes = useStyles()
@@ -38,5 +38,5 @@ const CardPiragua = ({ descripcion ,valor}) => {
       </div>
   )
 }
-export default CardPiragua
+export default CardCaudal
 

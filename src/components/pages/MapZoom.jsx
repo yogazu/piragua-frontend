@@ -2,7 +2,7 @@ import React from "react"
 import * as d3 from "d3";
 import DrawMap from "../atoms/DrawMap";
 import {connect } from "react-redux"
-import {  geoPath } from "d3-geo";
+
  
 class MapZoom extends React.Component  {
 
@@ -60,7 +60,8 @@ class MapZoom extends React.Component  {
       }
 
     return (
-            <DrawMap data={datafilter}  mercator={mercator} indicador={marca}></DrawMap>
+            <DrawMap data={datafilter}  mercator={mercator} indicador={marca}
+            width = {width} height={height}></DrawMap>
     );
   }
 }

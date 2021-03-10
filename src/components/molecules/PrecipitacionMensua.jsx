@@ -10,7 +10,7 @@ const blue = '#52b6ca';
 const green = '#b6e86f';
 const colors = chroma.scale([blue, green, red]).mode('hsl');
 
-class PrecipitacionSemanal extends Component {
+class PrecipitacionMensual extends Component {
   state = {
     bars: [], // array of rects
     // d3 helpers
@@ -20,10 +20,8 @@ class PrecipitacionSemanal extends Component {
     
   };
 
-  xAxis = d3.axisBottom()
-            .scale(this.state.xScale)
-            .tickFormat(d3.timeFormat('%A'))
-            
+  xAxis = d3.axisBottom().scale(this.state.xScale)
+    .tickFormat(d3.timeFormat('%A'));
   yAxis = d3.axisLeft().scale(this.state.yScale)
     .tickFormat(d => `${d}mm`);
 
@@ -52,14 +50,16 @@ class PrecipitacionSemanal extends Component {
     // calculate x and y for each rectangle
     const bars = data.map(d => {
       const y1 = yScale(d.high);
+      
+      console.log(y1)
       return {
         x: xScale(d.date),
         y: y1,
         height: (height - margin.bottom)  - y1 ,
-        fill: colors(colorScale(d.avg))
+        fill: colors(colorScale(d.avg)),
       }
     });
-    console.log(bars)
+
     return {bars};
   }
 
@@ -69,16 +69,13 @@ class PrecipitacionSemanal extends Component {
   }
 
   render() {
-   
 
     return (
       <svg width={width} height={height}>
         {this.state.bars.map((d, i) =>
-          (<rect key={i} x={d.x} y={d.y} width='10' height={d.height} fill={d.fill} />
-              )) }
+          (<rect key={i} x={d.x} y={d.y} width='1' height={d.height} fill={d.fill} />))}
         <g>
           <g ref='xAxis' transform={`translate(0, ${height - margin.bottom})`} />
-         
           <g ref='yAxis' transform={`translate(${margin.left}, 0)`} />
         </g>
       </svg>
@@ -86,4 +83,4 @@ class PrecipitacionSemanal extends Component {
   }
 }
 
-export default PrecipitacionSemanal;
+export default PrecipitacionMensual;

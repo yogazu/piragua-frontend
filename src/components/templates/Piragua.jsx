@@ -2,6 +2,7 @@ import React from "react"
 import RedAutomatica from "../pages/RedAutomatica"
 import Dashboard from "../pages/Dashboard"
 import RedSocial from "../pages/RedSocial"
+import RedMonitoreo from "../pages/RedMonitoreo"
 
 const Piragua = () => {
     return (
@@ -16,6 +17,10 @@ const Piragua = () => {
         <br/>
         <div className="ed-grid">
             <RedAutomatica/>
+        </div>
+        <br/>
+        <div className="ed-grid">
+            <RedMonitoreo/>
         </div>
     </>
     )

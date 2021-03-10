@@ -1,4 +1,4 @@
-import React, {  useState } from"react"
+import React from"react"
 import useFetch from "../CustomHooks/useFetch"
 import TextField from "@material-ui/core/TextField"
 import Autocomplete from "@material-ui/lab/Autocomplete"
@@ -10,15 +10,12 @@ const Territorial= ({actualizarxTerritorio}) => {
 
     const territorial = 
           useFetch("http://api-piragua.solupyme.com/api/v1/territorial/",[ ])
-    
-   
     return (
-      <>
           <Autocomplete
               id={territorial.data.id}
               options={territorial.data}
               getOptionLabel={(option) => option.nombre}
-              style={{ width: 350 }}
+             
               renderInput={(params) => 
                   <TextField {...params} 
                     label= "Territorial" 
@@ -26,11 +23,8 @@ const Territorial= ({actualizarxTerritorio}) => {
                   />}
               onChange={(event, newValue) => actualizarxTerritorio(newValue  ? newValue :"")}
           />
-      </>
     )
 }
-
-
 
 const mapStateToProps = () => ({})
 

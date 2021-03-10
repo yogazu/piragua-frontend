@@ -2,16 +2,16 @@ import React from "react"
 import ListaEstacionLluvia from "../organisms/ListaEstacionLluvia"
 import ReporteDatosLluvia from "../organisms/ReporteDatosLluvia"
 import PrecipitacionDiaria from "../molecules/PrecipitacionDiaria"
-import LineChartC from "../molecules/LineChartC"
-import BarChartG from "../molecules/BarChartG"
 import PrecipitacionSemanal from "../molecules/PrecipitacionSemanal"
+import PrecipitacionMensual from "../molecules/PrecipitacionMensua"
 
 class  EstacionLluvia extends React.Component {
 
     state = {
         temps: {},
         diario: 'sf',
-        semanal: 'am' // city whose temperatures to show
+        semanal: 'am', 
+        mensual: 'ny'
     };
     
     componentDidMount() {
@@ -32,8 +32,8 @@ class  EstacionLluvia extends React.Component {
 
         const data = this.state.temps[this.state.diario];
         const dataSemanal = this.state.temps[this.state.semanal];
+        const dataMensual = this.state.temps[this.state.mensual];
         return (
-            
             <>
                 <h3><center>Estaciones De Lluvia</center></h3>
                 <div className="ed-grid">
@@ -56,7 +56,7 @@ class  EstacionLluvia extends React.Component {
                 <br/>
                 <h3><center>Precipitación Mensual</center></h3>
                 <div className="ed-grid">
-                    <LineChartC data={data} />
+                    <PrecipitacionMensual data={dataMensual} />
                 </div>
             </>
         )

@@ -2,15 +2,18 @@ import React from "react"
 import DatosEmpresaSector from "../organisms/DatosEmpresaSector"
 import DatosGrupoPiraguero from "../organisms/DatosGrupoPiraguero"
 import DatosTipoDeGrupo from "../organisms/DatosTipoDeGrupo"
+import Box from '@material-ui/core/Box'
 
 const ParametrosRedSocial = () => {
     return (
         <>
             <div className="ed-grid">
-                <h1>RED SOCIAL</h1>
+                <Box bgcolor="info.main" color="primary.contrastText" p={2}>
+                    <h1>RED SOCIAL</h1>
+                </Box>
             </div>
             <br/>
-            <div className="ed-grid m-grid-3">
+            <div className="ed-grid rows-gap s-gap-01 m-grid-3">
                 <div className="ed-grid">
                     <h3><center>Tipo De Grupo</center></h3>
                         <DatosTipoDeGrupo/>

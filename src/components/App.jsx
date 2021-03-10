@@ -6,8 +6,6 @@ import AppRouter from "./AppRouter";
 import { Provider } from "react-redux";
 import store from "../redux/store"
 
-
-
 const App = () => (
   <Provider store={store}>
     <AppRouter/>

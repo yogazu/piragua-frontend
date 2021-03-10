@@ -2,26 +2,24 @@ import React from "react"
 import TextField from "@material-ui/core/TextField"
 import Autocomplete from "@material-ui/lab/Autocomplete"
 
-const EmpresaSector = ({empresaSector}) => {
+const TipoAnnoCampana = ({datoAnnoCampana}) => {
     return (
         <div className="ed-grid">
-            {
-            empresaSector ?
+            { datoAnnoCampana ?
                 <Autocomplete
-                    id={empresaSector.id}
-                    options={empresaSector}
+                    id={datoAnnoCampana.id}
+                    options={datoAnnoCampana}
                     getOptionLabel={(option) => option.name}
-                    
+                   
                     renderInput={(params) => 
                     <TextField {...params} 
-                    label= "Empresa o Tipo de Sector" variant="filled" 
-                    />}
-                />
+                    label= "Año Campaña" variant="filled" 
+                    />} 
+                /> 
             :
                 <h1>No existen Datos</h1>
             }
         </div>
     )
 }
-
-export default EmpresaSector
+export default TipoAnnoCampana

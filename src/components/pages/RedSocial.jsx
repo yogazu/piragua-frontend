@@ -16,7 +16,7 @@ const RedSocial = () => {
                     <RedSocialGeneral/>
                 </div>
                 <div className="ed-grid m-cols-4 m-x-2 ">
-                    <TablaDinamica />
+                    <TablaDinamica/>
                 </div>
             </div>
             <div className="ed-grid rows-gap m-gap-05 m-grid-4">

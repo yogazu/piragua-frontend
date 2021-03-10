@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import chroma from 'chroma-js';
 
 const width = 350;
-const height = 230;
+const height = 200;
 const margin = {top: 20, right: 13, bottom: 50, left: 40};
 const red = '#eb6a5b';
 const blue = '#52b6ca';

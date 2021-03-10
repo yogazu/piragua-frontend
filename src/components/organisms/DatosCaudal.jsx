@@ -1,17 +1,16 @@
 import React, { Component } from "react"
 import axios from "axios";
-import CardPiragua from "../molecules/CardPiragua";
-import urlCantidadGrupos from "../../data/cantidadDeGrupos.json"
+import urlCaudal from "../../data/cantidadCaudal.json"
+import CardCaudal from "../molecules/CardCaudal";
 
-
-class DatosCantidadGrupos extends Component {
+class DatosCaudal extends Component {
     constructor (props){
        super(props)
        this.state ={ 
         datos: []
        }
     }  
-    //este servicio no funciona por eso se esta utilizando datosUno
+    //este servicio no funciona por eso se esta utilizando 
     componentDidMount () {
         axios.get(`http://api-piragua.solupyme.com/api/v1/nivel-subsiguiente/`)
         .then(response => this.setState({
@@ -20,10 +19,10 @@ class DatosCantidadGrupos extends Component {
       }
     render(){
         const {datos} = this.state
-        return (<CardPiragua descripcion = {urlCantidadGrupos.name} 
-                         valor  = {urlCantidadGrupos.valor} 
+        return (<CardCaudal descripcion = {urlCaudal.name} 
+                         valor  = {urlCaudal.valor} 
                 />)
     }
 }
 
-export default DatosCantidadGrupos
+export default DatosCaudal

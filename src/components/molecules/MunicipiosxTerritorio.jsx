@@ -30,12 +30,11 @@ const MunicipioxTerritorio = ({territorioActual,actualizarxMunicipio}) => {
   },[territorioActual])
  
   return (
-    <div className = "ed-grid">
         <Autocomplete
           id={municipios.data ? municipios.data.id : "0"}
           options={municipios.data ? municipios.data : []}  
           getOptionLabel={(option) => option ? option.nombre : ""}
-          style={{ width: 350 }}
+         
           renderInput={(params) => 
             <TextField {...params} 
               label= "Municipios" variant="filled" color = "primary"
@@ -43,7 +42,6 @@ const MunicipioxTerritorio = ({territorioActual,actualizarxMunicipio}) => {
             onChange={(event, newValue) => 
               actualizarxMunicipio(newValue  ? newValue :"")}
         />
-    </div>
   )
 }
 

@@ -12,7 +12,7 @@ class DatosCantidadLluviometros extends Component {
     }
     //este servicio no aplica
     componentDidMount () {
-        axios.get(`http://piraguacorantioquia.com.co:8020/core/niveles-subsiguientes/get-all-nss1`)
+        axios.get(`http://api-piragua.solupyme.com/api/v1/nivel-subsiguiente/`)
         .then(response => this.setState({
             datos:response.data
         }))

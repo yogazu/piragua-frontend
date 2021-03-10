@@ -12,7 +12,7 @@ const NivelSubsiguiente = ({datosNivelSubsiguiente}) => {
               id={datosNivelSubsiguiente.uuid}
               options={datosNivelSubsiguiente}
               getOptionLabel={(option) => option.nombre}
-              style={{ width: 350 }}
+           
               renderInput={(params) => 
               <TextField {...params} 
               label= "Niveles Subsiguientes" variant="filled" 
