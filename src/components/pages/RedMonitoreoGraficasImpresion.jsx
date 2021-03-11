@@ -9,7 +9,7 @@ class  RedRedMonitoreoGraficasImpresion extends React.Component {
         temps: {},
         city: 'sf', // city whose temperatures to show
     };
-    
+
     componentDidMount() {
     Promise.all([
         fetch(`${process.env.PUBLIC_URL}/sf.json`),
@@ -25,7 +25,6 @@ class  RedRedMonitoreoGraficasImpresion extends React.Component {
     }
     
     render (){
-
         const data = this.state.temps[this.state.city];
         return (
             <>

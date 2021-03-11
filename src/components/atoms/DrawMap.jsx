@@ -16,7 +16,7 @@ const DrawMap = ({data,mercator,indicador,width,height}) =>{
     var tooltip = d3.select('.tooltip-area')
         .style('opacity', 0);
         
-        console.log(width + " - " + height)
+       
       
     return (
 

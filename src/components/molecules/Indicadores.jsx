@@ -6,6 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Divider from '@material-ui/core/Divider';
 import DoneOutlineSharpIcon from '@material-ui/icons/DoneOutlineSharp';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import { Icon } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,14 +31,14 @@ export default function Indicadores() {
       <Divider variant="inset" component="li" />
       <ListItem>
         <ListItemAvatar>
-         
+         <CheckBoxOutlineBlankIcon/>
         </ListItemAvatar>
         <ListItemText primary="ICA-IDEAM"  />
       </ListItem>
       <Divider variant="inset" component="li" />
       <ListItem>
         <ListItemAvatar>
-        
+          <CheckBoxOutlineBlankIcon/>
         </ListItemAvatar>
         <ListItemText primary="ICOMI" />
       </ListItem>

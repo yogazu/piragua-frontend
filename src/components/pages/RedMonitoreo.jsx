@@ -2,7 +2,7 @@ import React from "react"
 import DonutChart from "../molecules/DonutChart"
 import FisicoquimicosMicrobiologicos from "./FisicoquimicosMicrobiologicos"
 import ParametrosRedMonitoreo from "./ParametrosRedMonitoreo"
-import RedRedMonitoreoGraficasImpresion from "./RedMonitoreoGraficasImpresion"
+import RedMonitoreoGraficasImpresion from "./RedMonitoreoGraficasImpresion"
 
 
 const RedMonitoreo = () => {
@@ -28,8 +28,10 @@ const RedMonitoreo = () => {
                 </div>
             </div>
             <br/>
+            <br/>
+            <br/>
             <div className="ed-grid rows-gap m-gap-05 m-grid-4">
-                 <RedRedMonitoreoGraficasImpresion/>
+                 <RedMonitoreoGraficasImpresion/>
             </div>   
             <br/>
             <br/>

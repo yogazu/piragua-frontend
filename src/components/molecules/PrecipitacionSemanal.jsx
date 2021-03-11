@@ -35,12 +35,12 @@ class PrecipitacionSemanal extends Component {
     // data has changed, so recalculate scale domains
     const timeMax = d3.max(data, d => d.date);
     const timeMin= d3.min(data, d => d.date);
-    console.log(data)
+  
    
     const tempMax = d3.max(data, d => d.high);
    
     const colorDomain = d3.extent(data, d => d.avg);
-    console.log(timeMin)
+    
     
     
     xScale.domain([timeMin,timeMax]);
@@ -59,7 +59,7 @@ class PrecipitacionSemanal extends Component {
         fill: colors(colorScale(d.avg))
       }
     });
-    console.log(bars)
+    
     return {bars};
   }
 

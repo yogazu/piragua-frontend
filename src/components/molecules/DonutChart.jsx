@@ -5,7 +5,7 @@ import PieClass from "./PieClass";
 
 // <DonutChart/>
 const DonutChart = () => {
-  const generateData = (value, length = 7) =>
+  const generateData = (value, length = 5) =>
     d3.range(length).map((item, index) => ({
       date: index,
       value: value === null || value === undefined ? Math.random() * 100 : value
@@ -24,7 +24,6 @@ useEffect(() => {
 
   return (
     <div>
-    
     <PieClass
       data={data}
       width={200}

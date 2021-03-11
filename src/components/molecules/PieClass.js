@@ -13,14 +13,14 @@ class PieClass extends Component {
       .arc()
       .innerRadius(props.innerRadius)
       .outerRadius(props.outerRadius);
-    this.colors = d3.scaleOrdinal(d3.schemeCategory10);
+    this.colors = d3.scaleOrdinal([`#377eb8`, `#4daf4a`, `#c4e63e`, `#e0501b`, `#e01b1b`])
     this.format = d3.format(".2f");
   }
   componentDidMount() {
     const svg = d3.select(this.ref.current);
     const data = this.createPie(this.props.data);
     const { width, height, innerRadius, outerRadius } = this.props;
-
+    
     svg
       .attr("class", "chart")
       .attr("width", width)
